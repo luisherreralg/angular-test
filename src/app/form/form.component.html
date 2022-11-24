@@ -1,0 +1,14 @@
+<div>
+  <div *ngIf="isToggle">
+    <h1>NAME: {{ formTest.value.name }}</h1>
+    <h1>SURNAME: {{ formTest.value.surname }}</h1>
+  </div>
+  <form [formGroup]="formTest">
+    <label for="name">Nombre</label>
+    <input type="text" name="name" id="name" formControlName="name" />
+    <label for="surname">Apellido</label>
+    <input type="text" name="surname" id="surname" formControlName="surname" />
+    <button (click)="toggleHandler()">TOGGLE</button>
+  </form>
+  {{ formTest.value | json }}
+</div>

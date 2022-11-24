@@ -1,0 +1,17 @@
+<style>
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+</style>
+
+<div>
+  <ul>
+    <!-- Esto es para recorrer un array -->
+    <li *ngFor="let robot of robots">
+      <img src="{{ robot.image }}" alt="" />
+      <p>{{ robot.name }}</p>
+    </li>
+  </ul>
+</div>

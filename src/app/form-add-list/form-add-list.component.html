@@ -1,0 +1,17 @@
+<div>
+  <h2 *ngIf="!formActive">AÑADE COSAS A LA LISTA</h2>
+  <div *ngIf="formActive">
+    <ul>
+      <li *ngFor="let item of itemsList">
+        <h2>{{ item }}</h2>
+        <button (click)="handleDelete(item)">🗑️</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<form [formGroup]="formAdd">
+  <label for="thing">THING:</label>
+  <input type="text" name="thing" id="thing" formControlName="thing" />
+  <button (click)="handleAdd()">ADD</button>
+</form>
